@@ -2,7 +2,7 @@ import React from "react";
 
 const Form = (props) => {
   return (
-    <form>
+    <form onSubmit={props.submit}>
       <div>
         <label htmlFor="firstname">First name</label>
         <input
@@ -36,7 +36,9 @@ const Form = (props) => {
       <div>
         <label htmlFor="role">Role</label>
         <select name="role" id="role" onChange={props.change}>
-          <option value="teacher">Teacher</option>
+          <option value="teacher" selected>
+            Teacher
+          </option>
           <option value="student">Student</option>
           <option value="other">Other</option>
         </select>
@@ -50,6 +52,7 @@ const Form = (props) => {
           onChange={props.change}
         ></textarea>
       </div>
+      <input type="submit" value="Send" />
     </form>
   );
 };
